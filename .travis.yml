@@ -11,5 +11,14 @@ go:
 script:
   - make test
 
+deploy:
+  provider: releases
+  skip_cleanup: true
+  #api_key: $GH_TOKEN
+  file_glob: true
+  #file:
+  on:
+    tags: true
+
 #after_success:
 #  - bash <(curl -s https://codecov.io/bash)
